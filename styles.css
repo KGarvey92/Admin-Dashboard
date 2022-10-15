@@ -163,6 +163,7 @@ main {
     border-top: 5px solid var(--canary);
     border-bottom: 5px solid var(--canary);
     padding: 12px;
+    color: white;
 }
 
 .mainTitles {
@@ -172,7 +173,6 @@ main {
 
 .projects > .mainTitles {
     grid-column: 1 / -1;
-    align-self: center;
 }
 
 .projects {
@@ -185,7 +185,6 @@ main {
 
 .card {
     background-color: var(--shadow-blue);
-    color: white;
     height: 10rem;
     width: 20rem;
     border-left: 6px solid var(--canary);
@@ -230,12 +229,35 @@ main {
 .announcementContainer {
     grid-row: 1;
     grid-column: 2;
+    display: grid;
+    grid-auto-flow: row;
+}
+
+.announcementCard {
+    display: grid;
+    grid-auto-flow: row;
+    background-color: var(--shadow-blue);
+    padding: 0.5rem;
+    border-radius: 5px;
+    border-bottom: 2px solid var(--prussian-blue);
+    font-size: 0.8rem;
+}
+
+.announcementCard div:nth-of-type(1) {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.announcementCard:last-of-type {
+    border-bottom: 4px solid var(--canary);
+
 }
 
 .trendingContainer {
     grid-row: 2;
     grid-column: 2;
 }
+
 
 @media (max-width: 1180px) {
     .projects {
@@ -251,3 +273,8 @@ main {
         height: 7rem;
     }
 }
+
+@media (min-width: 1900px) {
+    .projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
